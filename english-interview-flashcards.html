@@ -1,0 +1,509 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Interview Final Check List</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            color: white;
+            text-align: center;
+            padding: 30px;
+            position: relative;
+        }
+        
+        .header h1 {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .wing-sky-logo {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(255,255,255,0.2);
+            padding: 10px 15px;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 4px;
+            background: rgba(255,255,255,0.3);
+            border-radius: 2px;
+            overflow: hidden;
+            margin-top: 15px;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: white;
+            transition: width 0.3s ease;
+            border-radius: 2px;
+        }
+        
+        .content {
+            padding: 40px;
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .question-card {
+            width: 100%;
+            max-width: 600px;
+        }
+        
+        .category-tag {
+            background: #f8f9fa;
+            color: #666;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            display: inline-block;
+            border-left: 4px solid #4ecdc4;
+        }
+        
+        .question-number {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        .question-text {
+            font-size: 24px;
+            color: #333;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            min-height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .status-indicator {
+            margin-bottom: 30px;
+        }
+        
+        .checkbox {
+            width: 40px;
+            height: 40px;
+            border: 3px solid #ddd;
+            border-radius: 8px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            transition: all 0.3s ease;
+        }
+        
+        .checkbox.checked {
+            background: #4ecdc4;
+            border-color: #4ecdc4;
+            color: white;
+        }
+        
+        .checkbox:hover {
+            border-color: #4ecdc4;
+            transform: scale(1.1);
+        }
+        
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: 400px;
+            margin-top: 30px;
+        }
+        
+        .nav-button {
+            background: #4ecdc4;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-width: 100px;
+        }
+        
+        .nav-button:hover {
+            background: #45b7aa;
+            transform: translateY(-2px);
+        }
+        
+        .nav-button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .question-counter {
+            font-size: 16px;
+            color: #666;
+            font-weight: bold;
+        }
+        
+        .stats {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        .stats-item {
+            display: inline-block;
+            margin: 0 20px;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+                border-radius: 15px;
+            }
+            
+            .content {
+                padding: 30px 20px;
+            }
+            
+            .header {
+                padding: 20px;
+            }
+            
+            .header h1 {
+                font-size: 24px;
+            }
+            
+            .wing-sky-logo {
+                position: static;
+                margin-top: 10px;
+                display: inline-block;
+            }
+            
+            .question-text {
+                font-size: 20px;
+            }
+            
+            .navigation {
+                max-width: 300px;
+            }
+            
+            .nav-button {
+                min-width: 80px;
+                padding: 10px 16px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="wing-sky-logo">WING SKY</div>
+            <h1>English Interview Final Check List</h1>
+            <p>✈️ 승무원 영어 면접 체크리스트 ✈️</p>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+        </div>
+        
+        <div class="content">
+            <div class="question-card">
+                <div class="category-tag" id="categoryTag">워밍업 (Warm-up)</div>
+                <div class="question-number" id="questionNumber">Question 1</div>
+                <div class="question-text" id="questionText">Can I ask your name?</div>
+                <div class="status-indicator">
+                    <div class="checkbox" id="checkbox" onclick="toggleCheck()"></div>
+                </div>
+                <div class="navigation">
+                    <button class="nav-button" id="prevButton" onclick="prevQuestion()" disabled>이전</button>
+                    <div class="question-counter" id="questionCounter">1 / 122</div>
+                    <button class="nav-button" id="nextButton" onclick="nextQuestion()">다음</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="stats">
+        <div class="stats-item">완료: <span id="completed">0</span> / 122</div>
+        <div class="stats-item">진행률: <span id="percentage">0</span>%</div>
+    </div>
+
+    <script>
+        const questions = [
+            // 워밍업 (Warm-up)
+            { category: "워밍업 (Warm-up)", text: "Can I ask your name?" },
+            { category: "워밍업 (Warm-up)", text: "How do you feel? / Are you tired?" },
+            { category: "워밍업 (Warm-up)", text: "Are you nervous?" },
+            { category: "워밍업 (Warm-up)", text: "What time did you come here?" },
+            { category: "워밍업 (Warm-up)", text: "What did you do before you came in?" },
+            { category: "워밍업 (Warm-up)", text: "Did you come here alone?" },
+            { category: "워밍업 (Warm-up)", text: "What date is it today?" },
+            { category: "워밍업 (Warm-up)", text: "Where were you born?" },
+            { category: "워밍업 (Warm-up)", text: "When were you born?" },
+            { category: "워밍업 (Warm-up)", text: "How is the weather today?" },
+            { category: "워밍업 (Warm-up)", text: "What time did you get up?" },
+            { category: "워밍업 (Warm-up)", text: "What have you done so far?" },
+            { category: "워밍업 (Warm-up)", text: "Have you ever applied to our company before?" },
+            { category: "워밍업 (Warm-up)", text: "Where do you live?" },
+            { category: "워밍업 (Warm-up)", text: "How long have you lived there?" },
+            { category: "워밍업 (Warm-up)", text: "How long did it take to get here?" },
+            { category: "워밍업 (Warm-up)", text: "Can you tell me how to get here?" },
+            { category: "워밍업 (Warm-up)", text: "What did your parents say to you today?" },
+            { category: "워밍업 (Warm-up)", text: "Do your parents want you to become a flight attendant?" },
+            { category: "워밍업 (Warm-up)", text: "Did you have breakfast (lunch)?" },
+            
+            // 성격 (Personality)
+            { category: "성격 (Personality)", text: "Can you tell me about your personality?" },
+            { category: "성격 (Personality)", text: "What characteristics would be suitable for this position?" },
+            { category: "성격 (Personality)", text: "What do your parents (friends) say about your personality?" },
+            { category: "성격 (Personality)", text: "What kind of people do you like?" },
+            { category: "성격 (Personality)", text: "What kind of people do you like to work with?" },
+            { category: "성격 (Personality)", text: "Tell me your ideal type." },
+            { category: "성격 (Personality)", text: "What's your boyfriend's personality like?" },
+            { category: "성격 (Personality)", text: "Can you describe one of your best friends?" },
+            { category: "성격 (Personality)", text: "How many members are in your family?" },
+            { category: "성격 (Personality)", text: "Can you describe (your brother, your sister, your mother, your father)?" },
+            
+            // 여행 (Travel)
+            { category: "여행 (Travel)", text: "Have you ever been abroad?" },
+            { category: "여행 (Travel)", text: "Where have you been?" },
+            { category: "여행 (Travel)", text: "Why did you go there?" },
+            { category: "여행 (Travel)", text: "How long did you stay there?" },
+            { category: "여행 (Travel)", text: "What did you do there?" },
+            { category: "여행 (Travel)", text: "Which city has been the best you've been to so far?" },
+            { category: "여행 (Travel)", text: "How is it different between _____ and Korean?" },
+            { category: "여행 (Travel)", text: "How was the Canada's weather?" },
+            { category: "여행 (Travel)", text: "Have you ever been in a difficult situation while traveling?" },
+            { category: "여행 (Travel)", text: "What did you learn through traveling?" },
+            
+            // 경력 (Career Experience)
+            { category: "경력 (Career Experience)", text: "What do you do for a living?" },
+            { category: "경력 (Career Experience)", text: "Can you tell me about your current job?" },
+            { category: "경력 (Career Experience)", text: "Have you ever worked in the service field?" },
+            { category: "경력 (Career Experience)", text: "How long have you worked/did you work there?" },
+            { category: "경력 (Career Experience)", text: "What did you do there?" },
+            { category: "경력 (Career Experience)", text: "What were difficult things about working there?" },
+            { category: "경력 (Career Experience)", text: "Can you tell me about your work experience?" },
+            { category: "경력 (Career Experience)", text: "What did you learn through your work experience?" },
+            { category: "경력 (Career Experience)", text: "Do you think your prior working experience will be useful in this field?" },
+            
+            // 전공&학교생활&봉사활동 (Major & School Life & Volunteer)
+            { category: "전공&학교생활&봉사활동 (Major & School Life & Volunteer)", text: "What's your major?" },
+            { category: "전공&학교생활&봉사활동 (Major & School Life & Volunteer)", text: "Why did you choose it?" },
+            { category: "전공&학교생활&봉사활동 (Major & School Life & Volunteer)", text: "What did you learn from your major?" },
+            { category: "전공&학교생활&봉사활동 (Major & School Life & Volunteer)", text: "What kinds of classes did you take?" },
+            { category: "전공&학교생활&봉사활동 (Major & School Life & Volunteer)", text: "What was your favorite subject?" },
+            { category: "전공&학교생활&봉사활동 (Major & School Life & Volunteer)", text: "What was your worst subject?" },
+            { category: "전공&학교생활&봉사활동 (Major & School Life & Volunteer)", text: "Can you tell me about your university life?" },
+            { category: "전공&학교생활&봉사활동 (Major & School Life & Volunteer)", text: "Can you tell me about your school activity?" },
+            { category: "전공&학교생활&봉사활동 (Major & School Life & Volunteer)", text: "Can you tell me about your voluntary activity?" },
+            
+            // 영어공부&인터뷰 준비 (English Study & Interview Preparation)
+            { category: "영어공부&인터뷰 준비 (English Study & Interview Preparation)", text: "You are good at speaking English. Have you ever been abroad to study English?" },
+            { category: "영어공부&인터뷰 준비 (English Study & Interview Preparation)", text: "How have you studied English?" },
+            { category: "영어공부&인터뷰 준비 (English Study & Interview Preparation)", text: "How well can you speak English?" },
+            { category: "영어공부&인터뷰 준비 (English Study & Interview Preparation)", text: "Why is English very important?" },
+            { category: "영어공부&인터뷰 준비 (English Study & Interview Preparation)", text: "Can you speak another language?" },
+            { category: "영어공부&인터뷰 준비 (English Study & Interview Preparation)", text: "What have you prepared for this interview?" },
+            { category: "영어공부&인터뷰 준비 (English Study & Interview Preparation)", text: "How long have you prepared to be a flight attendant?" },
+            
+            // 본인&직업에 대한 장, 단점 (Personal & Job Advantages/Disadvantages)
+            { category: "본인&직업에 대한 장, 단점 (Personal & Job Advantages/Disadvantages)", text: "Why do you want to become a flight attendant?" },
+            { category: "본인&직업에 대한 장, 단점 (Personal & Job Advantages/Disadvantages)", text: "What are some advantages of working as a flight attendant?" },
+            { category: "본인&직업에 대한 장, 단점 (Personal & Job Advantages/Disadvantages)", text: "What are some disadvantages of working as a flight attendant?" },
+            { category: "본인&직업에 대한 장, 단점 (Personal & Job Advantages/Disadvantages)", text: "What are your strong points?" },
+            { category: "본인&직업에 대한 장, 단점 (Personal & Job Advantages/Disadvantages)", text: "What are your weak points?" },
+            
+            // 음식 (Food)
+            { category: "음식 (Food)", text: "What kind of food do you like?" },
+            { category: "음식 (Food)", text: "Can you make it?" },
+            { category: "음식 (Food)", text: "As you know, the job of flight attendants is hard. What food would be good for flight attendants?" },
+            { category: "음식 (Food)", text: "If you have a chance to recommend the best Korean food to a foreigner, what would you recommend?" },
+            { category: "음식 (Food)", text: "Can you recommend any good restaurants that are located near your place?" },
+            
+            // 장소 (Places)
+            { category: "장소 (Places)", text: "Which city has been the best you've been to so far?" },
+            { category: "장소 (Places)", text: "Which city would you like to see added as a new destination for our airline?" },
+            { category: "장소 (Places)", text: "If you become a flight attendant, where would you like to go first?" },
+            { category: "장소 (Places)", text: "If one of the passengers asks you the best place to travel in Seoul, where would you like to recommend? Can you describe Jeju Island?" },
+            { category: "장소 (Places)", text: "Can you describe Myung-dong?" },
+            { category: "장소 (Places)", text: "Can you describe Insa-dong?" },
+            { category: "장소 (Places)", text: "Can you describe Dongdaemun?" },
+            { category: "장소 (Places)", text: "Can you tell me about your hometown?" },
+            
+            // 롤플레이 (Role Play)
+            { category: "롤플레이 (Role Play)", text: "If a passenger smokes on the airplane, how can you handle him/her?" },
+            { category: "롤플레이 (Role Play)", text: "Why is smoking very dangerous?" },
+            { category: "롤플레이 (Role Play)", text: "If a drunken passenger keeps requesting more alcohol, what would you do?" },
+            { category: "롤플레이 (Role Play)", text: "If a passenger asks you on a date, what would you do?" },
+            { category: "롤플레이 (Role Play)", text: "If a passenger keeps touching your butt, what would you do?" },
+            { category: "롤플레이 (Role Play)", text: "If a baby keeps crying, what would you do?" },
+            { category: "롤플레이 (Role Play)", text: "How can you explain bibimbap? Can you explain how to eat it?" },
+            { category: "롤플레이 (Role Play)", text: "If a passenger takes a blanket, what would you do?" },
+            { category: "롤플레이 (Role Play)", text: "If you have some tension with a senior, how could you handle it?" },
+            { category: "롤플레이 (Role Play)", text: "How can you recognize a passenger who is angry?" },
+            { category: "롤플레이 (Role Play)", text: "If you knew you were dying in a month, what would you do before?" },
+            { category: "롤플레이 (Role Play)", text: "What would you do if an economy-class passenger asks for the first-class meal?" },
+            { category: "롤플레이 (Role Play)", text: "If a passenger wants to change his/her seat to first class, what would you do?" },
+            { category: "롤플레이 (Role Play)", text: "If the passenger complains that it's hot in the aircraft, what would you do?" },
+            { category: "롤플레이 (Role Play)", text: "If the passenger complains that it's cold in the aircraft, what would you do?" },
+            { category: "롤플레이 (Role Play)", text: "If there is a bomb threat on a plane, how would you feel? How would you handle yourself?" },
+            { category: "롤플레이 (Role Play)", text: "What do you think are some difficult problems working with foreign passengers?" },
+            { category: "롤플레이 (Role Play)", text: "There could be a lot of emergency situations on airplanes. How would you handle them?" },
+            { category: "롤플레이 (Role Play)", text: "If you get your first paycheck, what would you like to do with this money first?" },
+            { category: "롤플레이 (Role Play)", text: "What would be your reaction toward an angry passenger? And why?" },
+            { category: "롤플레이 (Role Play)", text: "How different is it between a passport and a visa?" },
+            { category: "롤플레이 (Role Play)", text: "If a passenger asks \"How much money do you make?\" What would you say?" },
+            { category: "롤플레이 (Role Play)", text: "If your boyfriend takes Korean air with another girl, what would you do?" },
+            { category: "롤플레이 (Role Play)", text: "I am sorry to ask this question. If you fail to get a job this time, what would you do?" },
+            { category: "롤플레이 (Role Play)", text: "You spilled hot coffee on a passenger due to sudden turbulence, what would you do?" },
+            
+            // 건강&스트레스 (Health & Stress)
+            { category: "건강&스트레스 (Health & Stress)", text: "How do you keep your health?" },
+            { category: "건강&스트레스 (Health & Stress)", text: "When do you get stressed out?" },
+            { category: "건강&스트레스 (Health & Stress)", text: "How do you handle your stress?" },
+            { category: "건강&스트레스 (Health & Stress)", text: "If your co-worker (senior) is in a stressful situation, how can you help her handle it?" },
+            
+            // 자질&포부 (Qualifications & Aspirations)
+            { category: "자질&포부 (Qualifications & Aspirations)", text: "What kind of flight attendant would you like to be?" },
+            { category: "자질&포부 (Qualifications & Aspirations)", text: "What kind of service would you like to offer?" },
+            { category: "자질&포부 (Qualifications & Aspirations)", text: "What is your impression of a flight attendant? / What do you think about the job of a flight attendant?" },
+            { category: "자질&포부 (Qualifications & Aspirations)", text: "Do you know what they do in the cabin?" },
+            { category: "자질&포부 (Qualifications & Aspirations)", text: "What are some important characteristics of becoming a flight attendant?" },
+            { category: "자질&포부 (Qualifications & Aspirations)", text: "If you were me, who would you like to hire?" },
+            { category: "자질&포부 (Qualifications & Aspirations)", text: "Which one is more important: safety or good service?" },
+            { category: "자질&포부 (Qualifications & Aspirations)", text: "How long will you work at our company?" },
+            { category: "자질&포부 (Qualifications & Aspirations)", text: "What do you expect to be doing in 10 years? What will you do in 10 years? What are your long-term goals?" },
+            { category: "자질&포부 (Qualifications & Aspirations)", text: "What are your short-term goals?" }
+        ];
+
+        let currentQuestionIndex = 0;
+        let checkedQuestions = new Set();
+
+        function updateDisplay() {
+            const question = questions[currentQuestionIndex];
+            
+            document.getElementById('categoryTag').textContent = question.category;
+            document.getElementById('questionNumber').textContent = `Question ${currentQuestionIndex + 1}`;
+            document.getElementById('questionText').textContent = question.text;
+            document.getElementById('questionCounter').textContent = `${currentQuestionIndex + 1} / ${questions.length}`;
+            
+            // Update checkbox
+            const checkbox = document.getElementById('checkbox');
+            if (checkedQuestions.has(currentQuestionIndex)) {
+                checkbox.classList.add('checked');
+                checkbox.innerHTML = '✓';
+            } else {
+                checkbox.classList.remove('checked');
+                checkbox.innerHTML = '';
+            }
+            
+            // Update navigation buttons
+            document.getElementById('prevButton').disabled = currentQuestionIndex === 0;
+            document.getElementById('nextButton').disabled = currentQuestionIndex === questions.length - 1;
+            
+            // Update progress bar
+            const progressPercentage = ((currentQuestionIndex + 1) / questions.length) * 100;
+            document.getElementById('progressFill').style.width = progressPercentage + '%';
+            
+            // Update stats
+            updateStats();
+        }
+
+        function updateStats() {
+            const completedCount = checkedQuestions.size;
+            const percentage = Math.round((completedCount / questions.length) * 100);
+            
+            document.getElementById('completed').textContent = completedCount;
+            document.getElementById('percentage').textContent = percentage;
+        }
+
+        function toggleCheck() {
+            if (checkedQuestions.has(currentQuestionIndex)) {
+                checkedQuestions.delete(currentQuestionIndex);
+            } else {
+                checkedQuestions.add(currentQuestionIndex);
+            }
+            updateDisplay();
+        }
+
+        function nextQuestion() {
+            if (currentQuestionIndex < questions.length - 1) {
+                currentQuestionIndex++;
+                updateDisplay();
+            }
+        }
+
+        function prevQuestion() {
+            if (currentQuestionIndex > 0) {
+                currentQuestionIndex--;
+                updateDisplay();
+            }
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(event) {
+            switch(event.key) {
+                case 'ArrowLeft':
+                    prevQuestion();
+                    break;
+                case 'ArrowRight':
+                    nextQuestion();
+                    break;
+                case ' ':
+                case 'Enter':
+                    event.preventDefault();
+                    toggleCheck();
+                    break;
+            }
+        });
+
+        // Initialize display
+        updateDisplay();
+    </script>
+</body>
+</html>
